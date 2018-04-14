@@ -2,33 +2,52 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import $ from 'jquery';
 import List from './components/List.jsx';
+import ListItem from './components/ListItem.jsx';
 
 class App extends React.Component {
   constructor(props) {
     super(props);
     this.state = { 
-      items: []
+      tasks: []
     }
   }
 
-  componentDidMount() {
+  componentDidMount(task) {
+    if(task){
     $.ajax({
-      url: '/items', 
+      type:'POST',
+      url: '/tasks', 
+      data:{Tasks:task},
       success: (data) => {
-        this.setState({
-          items: data
-        })
+       
+        console.log(data)
       },
       error: (err) => {
         console.log('err', err);
       }
     });
   }
+     $.ajax({
+      type:'GET',
+      url: '/tasks', 
+      success: (data) => {
+        this.setState({
+          tasks: data
+        })
+        console.log(data)
+      },
+      error: (err) => {
+        console.log('err', err);
+      }
+    });
+
+  }
 
   render () {
     return (<div>
-      <h1>Item List</h1>
-      <List items={this.state.items}/>
+      <h1>Todo List</h1>
+      <List tasks={this.state.tasks}/>
+      <ListItem add={this.componentDidMount.bind(this)}/>
     </div>)
   }
 }

@@ -12,20 +12,20 @@ db.once('open', function() {
 });
 
 var itemSchema = mongoose.Schema({
-  quantity: Number,
-  description: String
+  Tasks: String
 });
 
-var Item = mongoose.model('Item', itemSchema);
+var Task = mongoose.model('Task', itemSchema);
 
-var selectAll = function(callback) {
-  Item.find({}, function(err, items) {
-    if(err) {
-      callback(err, null);
-    } else {
-      callback(null, items);
+var save = function(data,callback) {
+   var task=new Task(data);
+   task.save(function(err,data){
+    if(err){
+      callback(err);
     }
-  });
+    callback(null,data)
+   })
 };
 
-module.exports.selectAll = selectAll;
+module.exports.save = save;
+module.exports.Task=Task;

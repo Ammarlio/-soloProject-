@@ -3,10 +3,12 @@ import ListItem from './ListItem.jsx';
 
 const List = (props) => (
   <div>
-    <h4> List Component </h4>
-    There are { props.items.length } items.
-    { props.items.map(item => <ListItem item={item}/>)}
+  <h4> List </h4>
+   {props.tasks.map(function(task){
+   	return <h3>{task.Tasks}</h3>
+   })}
   </div>
 )
 
 export default List;
+ // 
