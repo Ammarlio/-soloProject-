@@ -5,7 +5,7 @@ const List = (props) => (
   <div>
   <h4> List </h4>
    {props.tasks.map(function(task){
-   	return <h3>{task.Tasks}</h3>
+   	return <h6>{task.Tasks}</h6>
    })}
   </div>
 )

@@ -14,7 +14,7 @@ app.get('/tasks', function (req, res) {
       res.sendStatus(500);
     } else {
       var arr=[];
-      for(var i = data.length-10 ; i < data.length ; i++){
+      for(var i = data.length-5 ; i < data.length ; i++){
         arr.push(data[i])
       }
       res.send(arr);

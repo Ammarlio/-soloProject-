@@ -11,4 +11,4 @@
   > I will make a 'TODO LIST' project in 'react' framwork for front-end, with 'mongo' database and 'express' back-end.
 
 ## How to Get Started ##
-   > I will make a signup and login an logout criteria for every user,and after the this login, the user will go for the front-end page the "TODO LIST". He can add and remove.
+   > I will make an input that recieve a todo list and a submit button, then the client will make a jquery post request and get request to let the server respectivly save data in the database and find definite data in databse then respond to the client by rendering it on the main page.
