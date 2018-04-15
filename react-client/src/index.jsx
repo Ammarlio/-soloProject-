@@ -4,11 +4,13 @@ import $ from 'jquery';
 import List from './components/List.jsx';
 import ListItem from './components/ListItem.jsx';
 
+
 class App extends React.Component {
   constructor(props) {
     super(props);
     this.state = { 
       tasks: []
+
     }
   }
 
@@ -44,8 +46,18 @@ class App extends React.Component {
   }
 
   render () {
+    // console.log(this.state.tasks.length)
+    // if (this.state.tasks.length ===0){
+    //   return (
+    //     <div>
+    //       <h1>test</h1>
+    //     </div>
+    //     )
+    // }
+    var arr=['red','green','blue'];
+
     return (<div>
-      <h1>Todo List</h1>
+      <h1 id="lol">Todo List</h1>
       <List tasks={this.state.tasks}/>
       <ListItem add={this.componentDidMount.bind(this)}/>
     </div>)

@@ -1,5 +1,6 @@
 import React from 'react';
 
+
 class ListItem extends React.Component{
 	constructor(props){
 		super(props)
@@ -19,9 +20,9 @@ class ListItem extends React.Component{
 	}
 	render(){
 		return(
-  <div>
+  <div class="button">
  	<input value ={this.state.task} onChange ={this.onChange}/>
- 	<button onClick={this.click}>add task </button>
+ 	<button className='btn-primary' onClick={this.click}>add task </button>
   </div>
   )
 	}
