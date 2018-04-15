@@ -13,11 +13,11 @@ app.get('/tasks', function (req, res) {
     if(err) {
       res.sendStatus(500);
     } else {
-      // var arr=[];
-      // for(var i = data.length-5 ; i < data.length ; i++){
-      //   arr.push(data[i])
-      // }
-      res.send(data);
+      var arr=[];
+      for(var i = data.length-5 ; i < data.length ; i++){
+        arr.push(data[i])
+      }
+      res.send(arr);
     }
   });
 });

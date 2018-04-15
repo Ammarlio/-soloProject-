@@ -54,7 +54,7 @@ class App extends React.Component {
     //     </div>
     //     )
     // }
-    var arr=['red','green','blue'];
+  
 
     return (<div>
       <h1 id="lol">Todo List</h1>
